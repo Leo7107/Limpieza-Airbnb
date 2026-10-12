@@ -26,7 +26,7 @@ body {
   font-family: var(--fuente-texto);
   background-color: var(--color-fondo);
   color: var(--color-texto);
-  line-height: 1.5;
+  line-height: 1.5; 
 }
 
 header {
@@ -88,8 +88,219 @@ nav a:hover::after{
   text-decoration: none;
   font-weight: 600;
 }
+.btn svg {
+  transition: transform 0.2s ease;
+}
+
+.btn:hover svg {
+  transform: translateY(-2px);   /* sube 2px */
+}
 
 .menu-toggle {
   display: none;
 }
 
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 4rem;
+}
+
+.etiqueta {
+  background-color: var(--color-dorado-claro);
+  border-radius: var(--radio);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: inline-flex; /* punto y texto en fila */
+  align-items: center;  /* centrados verticalmente */
+  gap: 0.5rem
+}
+
+.etiqueta::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;        /* cuadrado → círculo */
+  background-color: var(--color-rosado);
+}
+
+.hero-texto {
+  display: flex;
+  flex:1;
+  max-width: 600px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+h1 {
+  font-family: var(--fuente-titulos);
+  font-size: 78px;
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.04em;
+}
+
+h1 span {
+  color: var(--color-rosado-texto);
+}
+
+.hero-texto p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-texto-suave);
+}
+
+.hero-botones {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-secundario {
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  color: var(--color-texto);
+  padding: 13px 2rem;
+  border-radius: var(--radio);
+  text-decoration: none;
+  font-weight: 600;
+  border: 1.5px solid var(--color-texto);
+}
+
+.btn-secundario svg {
+  transition: transform 0.2s ease;
+}
+
+.btn-secundario:hover svg {
+  transform: translateY(2px);   /* baja 2px */
+}
+
+.beneficios {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  list-style: none;
+}
+
+.beneficios li {
+  display: flex; /* check y texto en fila */
+  align-items: center;
+  gap: 0.5rem;  /* espacio entre el check y el texto */
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.beneficios li::before {
+  content: "✓";
+  color: var(--color-azul-profundo);
+  font-weight: 700;
+}
+ .hero-imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding-left: 10rem;
+  align-items: center;  
+ }
+
+ .marco {
+  position: relative; 
+  width: 100%;
+  max-width: 430px;
+}
+.hero-imagen img {
+  width: 100%;
+  aspect-ratio: 3 / 4; /* siempre más alta que ancha */
+  object-fit: cover;  /* recorta la foto sin deformarla */
+  border-radius: 999px 999px 28px 28px;  /* arco arriba, esquinas suaves abajo */
+  position: relative;
+  z-index: 1;
+}
+ .tarjeta-reporte{
+  position: absolute;
+  left: -190px;
+  bottom: 70px;
+  width: 260px;
+  background-color: var(--color-superficie);
+  border-radius: var(--radio);
+  padding: 22px;
+  box-shadow: var(--sombra);
+  z-index: 2;
+ }
+
+ .tarjeta-titulo{
+  font-family: var(--fuente-titulos);
+  font-size: 17px;
+  font-weight: 700;
+ }
+
+.tarjeta-fecha{
+  font-size: 13px;
+  color: var(--color-texto-suave);
+  margin-bottom: 12px;
+ }
+
+ .tarjeta-reporte ul{
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  gap: 10px;
+ }
+
+ .tarjeta-reporte li{
+  display: flex;/* círculo y texto en fila */
+  align-items: center;
+  gap: 10px;
+  font-size: 15px
+ }
+
+ .tarjeta-reporte li::before {
+  content: "✓";
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--color-azul-profundo);  
+  color: var(--color-superficie);
+
+  display: flex;               
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.sol, .sol-borde {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;    
+}
+.sol-borde { 
+  width: 200px;
+  height: 200px;
+  top: -40px;
+  right: -70px;
+  border: 2px dashed var(--color-dorado);
+}
+
+.sol{
+  width: 132px;
+  height: 132px;
+  top: -6px; 
+  right: -36px;
+  background-color: var(--color-dorado);
+}
+
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.sol-borde{
+  animation: girar 40s linear infinite;
+}
