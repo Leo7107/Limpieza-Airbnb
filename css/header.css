@@ -1,0 +1,293 @@
+header {
+  position: sticky;              /* se queda pegado arriba al hacer scroll */
+  top: 0;
+  z-index: 40;
+  gap: 32px;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color .3s ease, box-shadow .3s ease, padding .3s ease;
+}
+
+header.header-scroll {
+  background-color: rgb(255 255 255 / .92);
+  backdrop-filter: blur(10px);   /* desenfoca lo que pasa por detrás */
+  border-bottom-color: var(--color-linea);
+  box-shadow: 0 12px 30px -24px rgb(15 27 61 / .5);
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.logo img {
+  transition: height .3s ease;
+}
+
+.header-scroll .logo img {
+  height: 64px;                  /* el logo se achica al bajar */
+}
+
+/* Enlace de la sección que se está viendo (lo marca menu.js) */
+nav a.activo {
+  color: var(--color-texto);
+  font-weight: 700;
+}
+
+nav a.activo::after {
+  transform: scaleX(1);
+}
+
+/* ---------- Botón hamburguesa ---------- */
+.menu-toggle {
+  width: 48px;
+  height: 48px;
+  border: 1.5px solid var(--color-texto);
+  border-radius: 14px;
+  background: transparent;
+  color: var(--color-texto);
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.menu-linea {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: currentColor;
+  transition: transform .3s ease, opacity .2s ease;
+}
+
+/* Hamburguesa → X */
+.menu-abierto .menu-linea:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-abierto .menu-linea:nth-child(2) { opacity: 0; }
+.menu-abierto .menu-linea:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+body.menu-abierto {
+  overflow: hidden;              /* no se puede hacer scroll con el menú abierto */
+}
+
+.menu-abierto header {
+  background-color: var(--color-texto);
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+.menu-abierto .menu-toggle {
+  color: var(--color-superficie);
+  border-color: var(--color-superficie);
+}
+
+/* ---------- Menú móvil a pantalla completa ---------- */
+.menu-movil {
+  position: fixed;
+  inset: 0;
+  z-index: 35;
+  background-color: var(--color-texto);
+  padding: 130px 32px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+
+.menu-abierto .menu-movil {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-movil ul {
+  display: block;                /* style.css pone los ul del nav en fila */
+  list-style: none;
+}
+
+.menu-movil li {
+  border-bottom: 1px solid rgb(255 255 255 / .15);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .4s ease, transform .4s ease;
+}
+
+/* Los enlaces aparecen uno tras otro */
+.menu-abierto .menu-movil li { opacity: 1; transform: none; }
+.menu-abierto .menu-movil li:nth-child(2) { transition-delay: .05s; }
+.menu-abierto .menu-movil li:nth-child(3) { transition-delay: .1s; }
+.menu-abierto .menu-movil li:nth-child(4) { transition-delay: .15s; }
+.menu-abierto .menu-movil li:nth-child(5) { transition-delay: .2s; }
+
+.menu-movil li a {
+  display: block;
+  padding: 18px 0;
+  font-family: var(--fuente-titulos);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-superficie);
+}
+
+.menu-movil a::after {
+  display: none;                 /* sin la línea rosada del menú de escritorio */
+}
+
+.menu-movil-pie {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+  color: rgb(255 255 255 / .7);
+  font-size: 14px;
+}
+
+.menu-movil-pie .btn {
+  justify-content: center;
+  min-height: 56px;
+}
+
+/* ---------- Botón flotante de WhatsApp ---------- */
+.whatsapp-flotante {
+  display: none;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 30;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--color-azul);
+  color: var(--color-superficie);
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 30px -10px rgb(30 79 216 / .7);
+  transition: transform .2s ease, opacity .3s ease;
+}
+
+.whatsapp-flotante svg {
+  width: 26px;
+  height: 26px;
+}
+
+.whatsapp-flotante:hover {
+  transform: scale(1.06);
+}
+
+.menu-abierto .whatsapp-flotante {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* ---------- Pantallas medianas (laptop pequeña) ---------- */
+@media (max-width: 1279px) {
+  .hero-imagen {
+    padding-left: 4rem;
+  }
+
+  .tarjeta-reporte {
+    left: -90px;
+  }
+}
+
+/* ---------- Tablet (menos de 1024 px) ---------- */
+@media (max-width: 1023px) {
+  header nav,
+  header > .btn {
+    display: none;               /* se cambian por el menú hamburguesa */
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 2rem 2rem 4rem;
+    gap: 4rem;
+  }
+
+  .hero-texto {
+    max-width: none;
+  }
+
+  h1 {
+    font-size: clamp(46px, 7vw, 78px);
+  }
+
+  .hero-imagen {
+    padding: 24px 40px 24px 64px;
+  }
+
+  .tarjeta-reporte {
+    left: -56px;
+  }
+}
+
+/* ---------- Móvil (menos de 640 px) ---------- */
+@media (max-width: 639px) {
+  header {
+    padding: .75rem 1.25rem;
+  }
+
+  .logo img,
+  .header-scroll .logo img {
+    height: 60px;
+  }
+
+  .menu-movil {
+    padding: 110px 24px 32px;
+  }
+
+  .hero {
+    padding: 1.5rem 1.25rem 4rem;
+    gap: 2.5rem;
+  }
+
+  h1 {
+    font-size: 46px;
+  }
+
+  .hero-botones {
+    flex-wrap: wrap;
+  }
+
+  .hero-botones a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-imagen {
+    padding: 16px 28px 16px 36px;
+  }
+
+  .sol-borde {
+    width: 140px;
+    height: 140px;
+    top: -24px;
+    right: -40px;
+  }
+
+  .sol {
+    width: 92px;
+    height: 92px;
+    top: 0;
+    right: -16px;
+  }
+
+  .tarjeta-reporte {
+    left: -28px;
+    bottom: 24px;
+    width: 210px;
+    padding: 16px;
+  }
+
+  .tarjeta-reporte li {
+    font-size: 14px;
+  }
+
+  .whatsapp-flotante {
+    display: flex;
+  }
+}

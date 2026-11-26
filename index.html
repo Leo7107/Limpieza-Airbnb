@@ -29,6 +29,54 @@
   </head>
   <body>
 
+    <!-- ============ HEADER ============ -->
+    <header id="header">
+      <a href="#inicio" class="logo">
+        <img src="./img/royal-logo.webp" alt="Royal Cleaning Services" />
+      </a>
+
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="#Servicios">Servicios</a></li>
+          <li><a href="#ComoTrabajamos">Cómo trabajamos</a></li>
+          <li><a href="#AntesDespues">Antes y después</a></li>
+          <li><a href="#Preguntas">Preguntas</a></li>
+        </ul>
+      </nav>
+
+      <a href="https://wa.me/50375503571?text=Hola%2C%20quiero%20cotizar%20una%20limpieza%20para%20mi%20Airbnb" class="btn" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.6 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5z"/></svg>
+        Cotizar por WhatsApp
+      </a>
+
+      <!-- Botón hamburguesa: 3 líneas que se convierten en X -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuMovil">
+        <span class="menu-linea"></span>
+        <span class="menu-linea"></span>
+        <span class="menu-linea"></span>
+      </button>
+    </header>
+
+    <!-- Menú móvil a pantalla completa -->
+    <div class="menu-movil" id="menuMovil" aria-hidden="true">
+      <nav aria-label="Menú móvil">
+        <ul>
+          <li><a href="#Servicios">Servicios</a></li>
+          <li><a href="#ComoTrabajamos">Cómo trabajamos</a></li>
+          <li><a href="#AntesDespues">Antes y después</a></li>
+          <li><a href="#Preguntas">Preguntas</a></li>
+          <li><a href="#Contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="menu-movil-pie">
+        <a href="https://wa.me/50375503571?text=Hola%2C%20quiero%20cotizar%20una%20limpieza%20para%20mi%20Airbnb" class="btn" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.6 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5z"/></svg>
+          Escribir por WhatsApp
+        </a>
+        <p>Atendemos de 7:00 a. m. a 5:00 p. m.</p>
+      </div>
+    </div>
+
       <!-- ============ FRANJA ANIMADA ============ -->
       <div class="franja" aria-hidden="true">
         <div class="franja-pista">
@@ -48,6 +96,8 @@
           </div>
         </div>
       </div>
+
+    <main>
 
       <!-- ============ SERVICIOS ============ -->
       <section class="seccion servicios" id="Servicios">
@@ -343,6 +393,7 @@
         </div>
       </section>
 
+    </main>
 
     <!-- ============ FOOTER ============ -->
     <footer class="footer">
@@ -372,7 +423,10 @@
       </div>
     </footer>
 
-    <!-- BOTON FLOTANTE -->
+    <!-- Botón flotante de WhatsApp (solo se ve en móvil) -->
+    <a href="https://wa.me/50375503571?text=Hola%2C%20quiero%20cotizar%20una%20limpieza%20para%20mi%20Airbnb" class="whatsapp-flotante" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.6 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5z"/></svg>
+    </a>
 
     <script src="./js/reveal.js"></script>
     <script src="./js/menu.js"></script>
