@@ -1,306 +1,365 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-:root {
-  --color-dorado: #F2B91E;
-  --color-dorado-claro: #FFF1C9;
-  --color-azul: #1E4FD8;
-  --color-azul-oscuro: #1538A6;
-  --color-azul-profundo: #16307A;
-  --color-rosado: #D62A7A;
-  --color-rosado-texto: #C8246F;
-  --color-texto: #0F1B3D;
-  --color-texto-suave: #4E5A78;
-  --color-fondo: #F3F6FC;
-  --color-superficie: #FFFFFF;
-  --color-linea: #DCE3F2;
+/* =========================================================
+   base.css · Estilos que comparten todas las secciones
+   (contenedor, títulos de sección, botones extra y la
+   animación de "aparecer al hacer scroll")
+   ========================================================= */
 
-  --fuente-titulos: 'Bricolage Grotesque', sans-serif;
-  --fuente-texto: 'Figtree', system-ui, sans-serif;
-  --radio: 24px;
-  --sombra: 0 22px 34px -18px rgb(15 27 61 / .45);
+:root {
+  --ancho-max: 1200px;
+  /* Rayas grises para espacios donde todavía no hay foto */
+  --rayas: repeating-linear-gradient(135deg, #E3E9F6 0 14px, #D8E0F1 14px 28px);
 }
-body {
-  font-family: var(--fuente-texto);
+
+html {
+  scroll-behavior: smooth;      /* el menú baja suave a cada sección */
+}
+
+body,
+main {
+  overflow-x: clip;             /* evita scroll horizontal por la franja inclinada */
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+/* Las secciones con id no quedan tapadas por el header fijo */
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+/* Foco visible al navegar con el teclado (accesibilidad) */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--color-dorado);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Íconos de línea */
+.icono {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Contenedor estándar de cada sección */
+.seccion {
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: 120px 32px;
+}
+
+
+/* ---------- Botones extra (el .btn azul ya está en style.css) ---------- */
+.btn {
+  justify-content: center;
+  transition: transform .2s ease, background-color .2s ease, color .2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-grande {
+  min-height: 56px;
+  padding: 0 28px;
+  font-size: 17px;
+}
+
+.btn-claro {
   background-color: var(--color-fondo);
   color: var(--color-texto);
-  line-height: 1.5; 
+  box-shadow: none;
 }
 
-header {
+.btn-blanco {
   background-color: var(--color-superficie);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 3rem;
+  color: var(--color-rosado-texto);
+  font-weight: 700;
 }
 
-nav ul{
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-nav ul li a{
-  text-decoration: none;
-  color: var(--color-texto-suave);
-  font-weight: 500;
-}
-
-nav a{
-  position: relative;
-  padding: 6px 0;
-}
-
-nav a::after{
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  border-radius: 5px;
-  background-color: var(--color-rosado);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.3s ease-in-out;
-}
-
-nav a:hover::after{
-  transform: scaleX(1);
-}
-
-.logo img { 
-  height: 100px; 
-}
-
-.btn{
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: var(--color-azul);
+.btn-claro:hover,
+.btn-blanco:hover {
+  background-color: var(--color-texto);
   color: var(--color-superficie);
-  padding: 13px 2rem;
-  border-radius: var(--radio);
-  box-shadow: var(--sombra);
-  text-decoration: none;
-  font-weight: 600;
-}
-.btn svg {
-  transition: transform 0.2s ease;
 }
 
-.btn:hover svg {
-  transform: translateY(-2px);   /* sube 2px */
-}
 
-.menu-toggle {
-  display: none;
-}
-
-.hero {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4rem 4rem;
-}
-
-.etiqueta {
-  background-color: var(--color-dorado-claro);
-  border-radius: var(--radio);
-  padding: 0.5rem 1rem;
-  font-weight: 600;
-  font-size: 0.875rem;
-  display: inline-flex; /* punto y texto en fila */
-  align-items: center;  /* centrados verticalmente */
-  gap: 0.5rem
-}
-
-.etiqueta::before {
-  content: "";
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;        /* cuadrado → círculo */
-  background-color: var(--color-rosado);
-}
-
-.hero-texto {
-  display: flex;
-  flex:1;
-  max-width: 600px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-}
-
-h1 {
-  font-family: var(--fuente-titulos);
-  font-size: 78px;
-  font-weight: 800;
-  line-height: 1.0;
-  letter-spacing: -0.04em;
-}
-
-h1 span {
+/* ---------- Encabezado de cada sección ---------- */
+.etiqueta-seccion {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: var(--color-rosado-texto);
 }
 
-.hero-texto p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--color-texto-suave);
+.etiqueta-clara {
+  color: var(--color-dorado-claro);
 }
 
-.hero-botones {
+.encabezado {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.btn-secundario {
-  display: inline-flex;
-  align-items: center;
-  background-color: transparent;
-  color: var(--color-texto);
-  padding: 13px 2rem;
-  border-radius: var(--radio);
-  text-decoration: none;
+.encabezado h2 {
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 800;
+  line-height: 1.02;
+}
+
+.encabezado p {
+  color: var(--color-texto-suave);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.encabezado a {
+  color: var(--color-azul-oscuro);
   font-weight: 600;
-  border: 1.5px solid var(--color-texto);
 }
 
-.btn-secundario svg {
-  transition: transform 0.2s ease;
+/* Variante: título a la izquierda y texto a la derecha */
+.encabezado-fila {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
 }
 
-.btn-secundario:hover svg {
-  transform: translateY(2px);   /* baja 2px */
+.encabezado-fila > div {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 640px;
 }
 
-.beneficios {
+.encabezado-fila > p {
+  max-width: 380px;
+}
+
+/* Variante: todo centrado */
+.encabezado-centro {
+  align-items: center;
+  text-align: center;
+}
+
+.encabezado-centro h2 {
+  max-width: 760px;
+}
+
+.encabezado-centro p {
+  max-width: 560px;
+}
+
+
+/* ---------- Aparecer al hacer scroll ----------
+   Solo se ocultan si hay JavaScript (clase .js en <html>),
+   así el contenido nunca queda invisible si el JS falla.
+   Se usa "translate" (no "transform") para no chocar con
+   los efectos de hover de las tarjetas. */
+.js .reveal {
+  opacity: 0;
+  translate: 0 28px;
+  transition:
+    opacity .7s ease var(--retraso, 0s),
+    translate .7s cubic-bezier(.2, .8, .2, 1) var(--retraso, 0s),
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.js .reveal.visible {
+  opacity: 1;
+  translate: none;
+}
+
+
+/* ---------- Móvil ---------- */
+@media (max-width: 639px) {
+  .seccion {
+    padding: 88px 20px;
+  }
+}
+
+
+/* ---------- Movimiento reducido ----------
+   Si el usuario lo pide en su sistema, se apagan las animaciones */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    translate: none;
+  }
+}
+/* =========================================================
+   footer.css · Pie de página
+   ========================================================= */
+
+.footer {
+  background-color: var(--color-texto);
+  color: var(--color-fondo);
+}
+
+.footer-contenido {
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: 56px 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.footer-arriba {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-  list-style: none;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
 }
 
-.beneficios li {
-  display: flex; /* check y texto en fila */
-  align-items: center;
-  gap: 0.5rem;  /* espacio entre el check y el texto */
+.footer-marca {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 320px;
+}
+
+.footer-marca img {
+  width: 150px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.footer-marca p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgb(243 246 252 / .75);
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
   font-size: 15px;
   font-weight: 500;
 }
 
-.beneficios li::before {
-  content: "✓";
-  color: var(--color-azul-profundo);
-  font-weight: 700;
+.footer a {
+  color: var(--color-fondo);
+  text-decoration: none;
+  transition: color .2s ease;
 }
- .hero-imagen {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  padding-left: 10rem;
-  align-items: center;  
- }
 
- .marco {
-  position: relative; 
-  width: 100%;
-  max-width: 430px;
+.footer a:hover {
+  color: var(--color-dorado);
 }
-.hero-imagen img {
-  width: 100%;
-  aspect-ratio: 3 / 4; /* siempre más alta que ancha */
-  object-fit: cover;  /* recorta la foto sin deformarla */
-  border-radius: 999px 999px 28px 28px;  /* arco arriba, esquinas suaves abajo */
-  position: relative;
-  z-index: 1;
-}
- .tarjeta-reporte{
-  position: absolute;
-  left: -190px;
-  bottom: 70px;
-  width: 260px;
-  background-color: var(--color-superficie);
-  border-radius: var(--radio);
-  padding: 22px;
-  box-shadow: var(--sombra);
-  z-index: 2;
- }
 
- .tarjeta-titulo{
-  font-family: var(--fuente-titulos);
-  font-size: 17px;
-  font-weight: 700;
- }
-
-.tarjeta-fecha{
-  font-size: 13px;
-  color: var(--color-texto-suave);
-  margin-bottom: 12px;
- }
-
- .tarjeta-reporte ul{
-  display: flex;
-  list-style: none;
-  flex-direction: column;
-  gap: 10px;
- }
-
- .tarjeta-reporte li{
-  display: flex;/* círculo y texto en fila */
+.volver-arriba {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 15px
- }
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+}
 
- .tarjeta-reporte li::before {
-  content: "✓";
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: var(--color-azul-profundo);  
+.volver-arriba .icono {
+  width: 16px;
+  height: 16px;
+  transition: transform .2s ease;
+}
+
+.volver-arriba:hover .icono {
+  transform: translateY(-3px);
+}
+
+.footer-abajo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid rgb(243 246 252 / .15);
+  font-size: 14px;
+  color: rgb(243 246 252 / .7);
+}
+
+@media (max-width: 639px) {
+  .footer-contenido {
+    padding: 48px 20px 96px;     /* espacio para el botón flotante */
+  }
+}
+/* =========================================================
+   franja.css · Franja rosada con texto en movimiento
+   El texto está repetido 2 veces en el HTML: al mover la pista
+   la mitad de su ancho (-50%), el grupo 2 queda justo donde
+   estaba el 1 y el salto no se nota (efecto infinito).
+   ========================================================= */
+
+.franja {
+  background-color: var(--color-rosado);
   color: var(--color-superficie);
+  padding: 18px 0;
+  overflow: hidden;             /* esconde el texto que se sale */
+  transform: rotate(-1.2deg);   /* la inclinación */
+  margin: 0 -24px;
+}
 
-  display: flex;               
+.franja-pista {
+  display: flex;
+  width: max-content;           /* tan ancha como todo su texto */
+  animation: deslizar 30s linear infinite;
+}
+
+.franja-grupo {
+  display: flex;
   align-items: center;
-  justify-content: center;
-
-  font-size: 12px;
+  gap: 40px;
+  padding-right: 40px;
+  font-family: var(--fuente-titulos);
+  font-size: 24px;
   font-weight: 700;
-  flex-shrink: 0;
+  white-space: nowrap;          /* nunca bajar de línea */
 }
 
-.sol, .sol-borde {
-  position: absolute;
-  border-radius: 50%;
-  z-index: 0;    
-}
-.sol-borde { 
-  width: 200px;
-  height: 200px;
-  top: -40px;
-  right: -70px;
-  border: 2px dashed var(--color-dorado);
+.estrella {
+  color: var(--color-dorado);
 }
 
-.sol{
-  width: 132px;
-  height: 132px;
-  top: -6px; 
-  right: -36px;
-  background-color: var(--color-dorado);
+@keyframes deslizar {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 
-@keyframes girar {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.sol-borde{
-  animation: girar 40s linear infinite;
+@media (max-width: 639px) {
+  .franja-grupo {
+    font-size: 20px;
+    gap: 28px;
+    padding-right: 28px;
+  }
 }
