@@ -11,18 +11,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- Estilos: uno general y uno por sección -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="./css/base.css" />
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/hero-animado.css" />
     <link rel="stylesheet" href="./css/franja.css" />
-    <link rel="stylesheet" href="./css/servicios.css" />
+    <link rel="stylesheet" href="css/servicios.css" />
     <link rel="stylesheet" href="./css/proceso.css" />
     <link rel="stylesheet" href="./css/antes-despues.css" />
-    <link rel="stylesheet" href="./css/compromiso.css" />
     <link rel="stylesheet" href="./css/preguntas.css" />
     <link rel="stylesheet" href="./css/contacto.css" />
     <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="css/compromiso.css" />
 
     <!-- Marca que hay JavaScript (lo usa la animación de aparecer) -->
     <script>document.documentElement.classList.add('js');</script>
@@ -99,9 +99,116 @@
         </div>
       </section>
 
-      <!-- ============ CÓMO TRABAJAMOS · otro compañero ============ -->
-
-      <!-- ============ ANTES Y DESPUÉS · otro compañero ============ -->
+      <section class="proceso" id="ComoTrabajamos">
+  <div class="seccion proceso-contenido">
+    <div class="proceso-texto">
+      <div class="encabezado reveal">
+        <span class="etiqueta-seccion etiqueta-clara">Cómo trabajamos</span>
+        <h2>Tú nos pasas las fechas. Nosotros dejamos todo listo.</h2>
+      </div>
+      <ol class="pasos">
+        <li class="reveal">
+          <span class="paso-numero">01</span>
+          <div>
+            <h3>Nos compartes tus fechas</h3>
+            <p>Envíanos por WhatsApp los check-outs de tus reservas.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="paso-numero">02</span>
+          <div>
+            <h3>Agendamos la limpieza</h3>
+            <p>Cada propiedad entra a nuestra agenda para llegar a tiempo.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="paso-numero">03</span>
+          <div>
+            <h3>Limpiamos con checklist</h3>
+            <p>Seguimos la misma lista en cada visita para que nada se olvide.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="paso-numero paso-final">04</span>
+          <div>
+            <h3>Te enviamos las fotos</h3>
+            <p>Recibes el antes y el después en cuanto terminamos.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+    <div class="agenda reveal">
+      <div class="agenda-encabezado">
+        <div>
+          <p class="agenda-titulo">Agenda de limpiezas</p>
+          <p class="agenda-fecha">Semana del 12 de octubre</p>
+        </div>
+        <span class="agenda-icono">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>
+        </span>
+      </div>
+      <ul class="agenda-lista">
+        <li>
+          <img src="./img/despues-sala.webp" alt="" class="agenda-foto" width="48" height="48" loading="lazy">
+          <div class="agenda-info">
+            <strong>Apartamento centro</strong>
+            <span>Lun 12 oct · check-out 11:00 a. m.</span>
+          </div>
+          <span class="estado estado-completada">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Completada
+          </span>
+        </li>
+        <li>
+          <img src="./img/galeria-cocina.webp" alt="" class="agenda-foto" width="48" height="48" loading="lazy">
+          <div class="agenda-info">
+            <strong>Casa en Nueva San Miguel</strong>
+            <span>Mar 13 oct · check-out 10:00 a. m.</span>
+          </div>
+          <span class="estado estado-proceso"><span class="punto-late"></span>En proceso</span>
+        </li>
+        <li>
+          <img src="./img/galeria-sala.webp" alt="" class="agenda-foto" width="48" height="48" loading="lazy">
+          <div class="agenda-info">
+            <strong>Suite privada</strong>
+            <span>Mié 14 oct · check-out 12:00 m.</span>
+          </div>
+          <span class="estado estado-programada">Programada</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="preguntas" id="Preguntas">
+  <div class="seccion preguntas-contenido">
+    <div class="encabezado reveal">
+      <span class="etiqueta-seccion">Preguntas</span>
+      <h2>Preguntas frecuentes</h2>
+      <p>¿No ves tu duda? <a href="https://wa.me/50375503571?text=Hola%2C%20quiero%20cotizar%20una%20limpieza%20para%20mi%20Airbnb" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>.</p>
+    </div>
+    <div class="acordeon">
+      <details open>
+        <summary>¿Cómo agendo una limpieza?<span class="faq-icono" aria-hidden="true"></span></summary>
+        <p>Escríbenos por WhatsApp con la dirección de la propiedad y las fechas de check-out de tus reservas.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto cuesta?<span class="faq-icono" aria-hidden="true"></span></summary>
+        <p>Desde $260 por limpieza. El precio final varía según el tamaño de la vivienda: escríbenos por WhatsApp con los detalles de tu propiedad y te enviamos una cotización.</p>
+      </details>
+      <details>
+        <summary>¿Qué zonas cubren?<span class="faq-icono" aria-hidden="true"></span></summary>
+        <p>Cubrimos toda la Zona Oriental de El Salvador.</p>
+      </details>
+      <details>
+        <summary>¿Tengo que estar presente durante la limpieza?<span class="faq-icono" aria-hidden="true"></span></summary>
+        <p>No es necesario. Si prefieres quedarte durante la limpieza, también puedes hacerlo.</p>
+      </details>
+      <details>
+        <summary>¿Cuándo recibo las fotos?<span class="faq-icono" aria-hidden="true"></span></summary>
+        <p>Te enviamos fotos al llegar a tu propiedad, para que veas cómo la encontramos, y al terminar, con el después de la limpieza.</p>
+      </details>
+    </div>
+  </div>
+</section>
 
       <!-- ============ NUESTRO COMPROMISO ============ -->
       <section class="seccion compromiso">
