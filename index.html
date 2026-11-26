@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
   <header class="header" id="header">
     <div class="container header__inner">
       <a href="#inicio" class="header__logo" aria-label="Royal Cleaning Services, ir al inicio">
-        <img src="img/royal-logo.webp" alt="Royal Cleaning Services" width="213" height="164">
+        <img src="img/logo.webp" alt="Royal Cleaning Services" width="213" height="164">
       </a>
 
       <nav class="nav" id="nav" aria-label="Principal">
@@ -362,11 +362,6 @@
       <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
     </defs>
   </svg>
-    <script>
-    const header = document.getElementById('header');
-    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 10);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  </script>
+
 </body>
 </html>
