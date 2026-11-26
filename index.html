@@ -1,367 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Royal Cleaning Services · Limpieza de Airbnb en San Miguel</title>
-  <meta name="description" content="Limpieza de propiedades Airbnb en San Miguel, El Salvador. Limpiamos entre cada reserva y te enviamos fotos del antes y el después.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
-
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="#inicio" class="header__logo" aria-label="Royal Cleaning Services, ir al inicio">
-        <img src="img/logo.webp" alt="Royal Cleaning Services" width="213" height="164">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Royal Cleaning Services</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#inicio" class="logo">
+        <img src="./img/royal-logo.webp" alt="Royal Cleaning Services" />
       </a>
 
-      <nav class="nav" id="nav" aria-label="Principal">
-        <ul class="nav__list">
-          <li><a class="nav__link" href="#servicios">Servicios</a></li>
-          <li><a class="nav__link" href="#proceso">Cómo trabajamos</a></li>
-          <li><a class="nav__link" href="#antes-despues">Antes y después</a></li>
-          <li><a class="nav__link" href="#preguntas">Preguntas</a></li>
+      <nav>
+        <ul>
+          <li>
+            <a href="#Servicios">Servicios</a>
+          </li>
+          <li>
+            <a href="#ComoTrabajamos">Cómo Trabajamos</a>
+          </li>
+          <li>
+            <a href="#AntesDespues">Antes y después </a>
+          </li>
+          <li>
+            <a href="#Preguntas">Preguntas</a>
+          </li>
         </ul>
-        <a class="btn btn--primary nav__mobile-cta" href="https://wa.me/503XXXXXXXX">
-          <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
-          Escribir por WhatsApp
-        </a>
-        <p class="nav__mobile-note">[Horario de atención]</p>
       </nav>
 
-      <a class="btn btn--primary header__cta" href="https://wa.me/503XXXXXXXX">
-        <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
-        Cotizar por WhatsApp
+      <a
+        href="https://wa.me/503XXXXXXXX" class="btn" target="_blank" rel="noopener">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"  aria-hidden="true">
+          <path
+            d="M20 11.5a8 8 0 0 1-11.6 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5z"
+          />
+        </svg>Cotizar por WhatsApp
       </a>
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    </header>
 
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <main id="contenido">
-
-    <section class="hero" id="inicio">
-      <div class="container hero__grid">
-        <div class="hero__text reveal">
-          <p class="pill pill--gold"><span class="dot" aria-hidden="true"></span>Limpieza para anfitriones de Airbnb · San Miguel</p>
-          <h1 class="h1">Tu Airbnb, listo para el <span class="accent">próximo huésped.</span></h1>
-          <p class="lead">Limpiamos entre cada reserva, seguimos un checklist en cada visita y te enviamos fotos del antes y el después. Tú te enfocas en tus huéspedes.</p>
-          <div class="hero__actions">
-            <a class="btn btn--primary btn--lg" href="https://wa.me/503XXXXXXXX">
-              <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
-              Agendar por WhatsApp
+    <!--inicia -->
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-texto">
+          <span class="etiqueta">Limpieza para anfitriones de Airbnb · San Miguel</span>
+          <h1>Tu Airbnb, listo para el <span>próximo huésped.</span></h1>
+          <p>Limpiamos entre cada reserva, seguimos un checklist en cada visita y te enviamos fotos del antes y después. Tú te enfocas en tus huéspedes.</p>
+          <div class="hero-botones">
+            <a href="https://wa.me/503XXXXXXXX" class="btn" target="_blank" rel="noopener"><svg width="20" height="20"viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"  aria-hidden="true"><path
+              d="M20 11.5a8 8 0 0 1-11.6 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5z"/>
+              </svg>Agendar por WhatsApp
             </a>
-            <a class="btn btn--outline btn--lg" href="#proceso">Ver cómo trabajamos</a>
+            <a href="#ComoTrabajamos" class="btn-secundario">Ver cómo trabajamos  <svg width="28" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
           </div>
-          <ul class="hero__benefits">
-            <li><svg class="icon icon--check" aria-hidden="true"><use href="#i-check"/></svg>Coordinamos con tus check-outs</li>
-            <li><svg class="icon icon--check" aria-hidden="true"><use href="#i-check"/></svg>Checklist en cada visita</li>
-            <li><svg class="icon icon--check" aria-hidden="true"><use href="#i-check"/></svg>Fotos de cada limpieza</li>
+          <ul class="beneficios">
+            <li>Coordinamos con tus check-outs</li>
+            <li>Checklist en cada visita</li>
+            <li>Fotos en cada limpieza</li>
           </ul>
         </div>
-
-        <div class="hero__media">
-          <div class="hero__ring" aria-hidden="true"></div>
-          <div class="hero__sun" aria-hidden="true"></div>
-          <div class="hero__arch placeholder">[Foto real: habitación lista para el huésped]</div>
-
-          <div class="checklist card">
-            <p class="checklist__title">Reporte de limpieza</p>
-            <p class="checklist__meta">Apartamento centro · Lun 12 oct</p>
-            <ul>
-              <li style="--d:.4s"><span class="checklist__tick"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Camas tendidas</li>
-              <li style="--d:.8s"><span class="checklist__tick"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Baño desinfectado</li>
-              <li style="--d:1.2s"><span class="checklist__tick"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Cocina lista</li>
-              <li style="--d:1.6s"><span class="checklist__tick"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>Fotos enviadas</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <span>Camas tendidas</span><span>Baños impecables</span><span>Cocina lista</span><span>Fotos del antes y después</span><span>Lista para el check-in</span>
-        <span>Camas tendidas</span><span>Baños impecables</span><span>Cocina lista</span><span>Fotos del antes y después</span><span>Lista para el check-in</span>
-      </div>
-    </div>
-
-    <section class="section" id="servicios">
-      <div class="container">
-        <div class="section__head section__head--split reveal">
-          <div>
-            <p class="eyebrow">Servicios</p>
-            <h2 class="h2">Lo que hacemos en cada propiedad</h2>
-          </div>
-          <p class="section__aside">Pensado para anfitriones que no pueden ir a la propiedad entre una reserva y otra.</p>
-        </div>
-
-        <div class="services">
-          <article class="service card reveal">
-            <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
-            <h3 class="h3">Limpieza entre huéspedes</h3>
-            <p>Después de cada check-out dejamos la propiedad lista para la siguiente reserva.</p>
-          </article>
-          <article class="service card reveal">
-            <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-sparkle"/></svg></span>
-            <h3 class="h3">Limpieza profunda</h3>
-            <p>Para temporada alta o cuando la propiedad necesita una atención más completa.</p>
-          </article>
-          <article class="service card reveal">
-            <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-bed"/></svg></span>
-            <h3 class="h3">Camas y toallas</h3>
-            <p>Cambio de sábanas, camas tendidas y toallas listas. [Confirmar si incluye lavandería]</p>
-          </article>
-          <article class="service card reveal">
-            <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-camera"/></svg></span>
-            <h3 class="h3">Reporte con fotos</h3>
-            <p>Te enviamos el antes y el después para que veas el resultado sin ir a la propiedad.</p>
-          </article>
-        </div>
-
-        <div class="price-bar reveal">
-          <p><strong>[Precio desde $__ por limpieza]</strong> · o pide una cotización para tu propiedad.</p>
-          <a class="btn btn--light" href="https://wa.me/503XXXXXXXX">Pedir cotización</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--deep" id="proceso">
-      <div class="container process">
-        <div class="reveal">
-          <p class="eyebrow eyebrow--light">Cómo trabajamos</p>
-          <h2 class="h2">Tú nos pasas las fechas. Nosotros dejamos todo listo.</h2>
-          <ol class="steps">
-            <li class="step">
-              <span class="step__num">01</span>
-              <div><h3>Nos compartes tus fechas</h3><p>Envíanos por WhatsApp los check-outs de tus reservas.</p></div>
-            </li>
-            <li class="step">
-              <span class="step__num">02</span>
-              <div><h3>Agendamos la limpieza</h3><p>Cada propiedad entra a nuestra agenda para llegar a tiempo.</p></div>
-            </li>
-            <li class="step">
-              <span class="step__num">03</span>
-              <div><h3>Limpiamos con checklist</h3><p>Seguimos la misma lista en cada visita para que nada se olvide.</p></div>
-            </li>
-            <li class="step step--last">
-              <span class="step__num">04</span>
-              <div><h3>Te enviamos las fotos</h3><p>Recibes el antes y el después en cuanto terminamos.</p></div>
-            </li>
-          </ol>
-        </div>
-
-        <div class="agenda card reveal">
-          <div class="agenda__head">
-            <div>
-              <p class="agenda__title">Agenda de limpiezas</p>
-              <p class="agenda__meta">Semana del 12 de octubre</p>
+        <div class="hero-imagen">
+          <div class="marco">
+            <div class="sol-borde"></div>
+            <div class="sol"></div>
+            <img src="./img/hero-habitacion.webp" alt="Habitación limpia lista para el próximo huésped">
+            <div class="tarjeta-reporte">
+              <p class="tarjeta-titulo">Reporte de limpieza</p>
+              <p class="tarjeta-fecha">Apartamento centro · Martes 13 oct</p>
+              <ul>
+                <li>Camas tendidas</li>
+                <li>Baño desinfectado</li>
+                <li>Cocina lista</li>
+                <li>Fotos enviadas</li>
+              </ul>
             </div>
-            <span class="icon-box icon-box--sm"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
-          </div>
-          <ul class="agenda__list">
-            <li class="agenda__item">
-              <span class="agenda__thumb placeholder" aria-hidden="true"></span>
-              <div><p class="agenda__name">Apartamento centro</p><p class="agenda__time">Lun 12 oct · check-out 11:00 a. m.</p></div>
-              <span class="status status--done"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Completada</span>
-            </li>
-            <li class="agenda__item">
-              <span class="agenda__thumb placeholder" aria-hidden="true"></span>
-              <div><p class="agenda__name">Casa con piscina</p><p class="agenda__time">Mar 13 oct · check-out 10:00 a. m.</p></div>
-              <span class="status status--progress"><span class="dot dot--pulse" aria-hidden="true"></span>En proceso</span>
-            </li>
-            <li class="agenda__item">
-              <span class="agenda__thumb placeholder" aria-hidden="true"></span>
-              <div><p class="agenda__name">Cabaña de playa</p><p class="agenda__time">Mié 14 oct · check-out 12:00 m.</p></div>
-              <span class="status status--scheduled">Programada</span>
-            </li>
-          </ul>
-          <p class="agenda__note">Ejemplo ilustrativo de cómo organizamos las limpiezas de la semana.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="antes-despues">
-      <div class="container">
-        <div class="section__head section__head--center reveal">
-          <p class="eyebrow">Antes y después</p>
-          <h2 class="h2">Mira la diferencia sin ir a la propiedad</h2>
-          <p class="section__sub">Así se ven las fotos que recibes al terminar cada limpieza.</p>
-        </div>
-
-        <div class="compare reveal" style="--pos:50%">
-          <div class="compare__img compare__img--after placeholder placeholder--light">[Foto real: después]</div>
-          <div class="compare__img compare__img--before placeholder placeholder--dark">[Foto real: antes]</div>
-          <span class="compare__tag compare__tag--before">Antes</span>
-          <span class="compare__tag compare__tag--after">Después</span>
-          <span class="compare__handle" aria-hidden="true">
-            <svg class="icon" aria-hidden="true"><use href="#i-arrows"/></svg>
-          </span>
-          <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Deslizar para comparar antes y después">
-        </div>
-        <p class="compare__hint"><svg class="icon" aria-hidden="true"><use href="#i-arrows"/></svg>Arrastra para comparar</p>
-
-        <div class="gallery">
-          <figure class="reveal">
-            <div class="gallery__img placeholder placeholder--light">[Foto: cocina]</div>
-            <figcaption>Cocina lista para el siguiente huésped</figcaption>
-          </figure>
-          <figure class="reveal">
-            <div class="gallery__img placeholder placeholder--light">[Foto: baño]</div>
-            <figcaption>Baño desinfectado y con toallas</figcaption>
-          </figure>
-          <figure class="reveal">
-            <div class="gallery__img placeholder placeholder--light">[Foto: habitación]</div>
-            <figcaption>Habitación con cama tendida</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--tight">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow">Testimonios</p>
-          <h2 class="h2">Lo que dicen los anfitriones</h2>
-        </div>
-        <div class="testimonials">
-          <figure class="testimonial card reveal">
-            <span class="testimonial__quote" aria-hidden="true">“</span>
-            <blockquote>[Testimonio real de un anfitrión que ya usa el servicio]</blockquote>
-            <figcaption>
-              <span class="avatar avatar--gold" aria-hidden="true"></span>
-              <span><strong>[Nombre del anfitrión]</strong><br>Anfitrión en San Miguel · [Tipo de propiedad]</span>
-            </figcaption>
-          </figure>
-          <figure class="testimonial card reveal">
-            <span class="testimonial__quote" aria-hidden="true">“</span>
-            <blockquote>[Testimonio real de un segundo anfitrión]</blockquote>
-            <figcaption>
-              <span class="avatar avatar--blue" aria-hidden="true"></span>
-              <span><strong>[Nombre del anfitrión]</strong><br>Anfitrión en San Miguel · [Tipo de propiedad]</span>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--white" id="preguntas">
-      <div class="container faq">
-        <div class="faq__intro reveal">
-          <p class="eyebrow">Preguntas</p>
-          <h2 class="h2">Preguntas frecuentes</h2>
-          <p>¿No ves tu duda? <a class="link" href="https://wa.me/503XXXXXXXX">Escríbenos por WhatsApp</a></p>
-        </div>
-        <div class="faq__list">
-          <details class="faq__item" open>
-            <summary>¿Cómo agendo una limpieza?<span class="faq__icon" aria-hidden="true"></span></summary>
-            <p>Escríbenos por WhatsApp con la dirección de la propiedad y las fechas de check-out de tus reservas.</p>
-          </details>
-          <details class="faq__item">
-            <summary>¿Cuánto cuesta?<span class="faq__icon" aria-hidden="true"></span></summary>
-            <p>[Precio o forma de cotizar según el tamaño de la propiedad]</p>
-          </details>
-          <details class="faq__item">
-            <summary>¿Qué zonas cubren?<span class="faq__icon" aria-hidden="true"></span></summary>
-            <p>[Zonas de San Miguel y alrededores que cubre el negocio]</p>
-          </details>
-          <details class="faq__item">
-            <summary>¿Tengo que estar presente durante la limpieza?<span class="faq__icon" aria-hidden="true"></span></summary>
-            <p>[Cómo se manejan las llaves o el acceso a la propiedad]</p>
-          </details>
-          <details class="faq__item">
-            <summary>¿Cuándo recibo las fotos?<span class="faq__icon" aria-hidden="true"></span></summary>
-            <p>Al terminar cada limpieza te enviamos las fotos del antes y el después por WhatsApp.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contacto">
-      <div class="container contact">
-        <div class="contact__cta reveal">
-          <h2 class="h2">¿Tienes un check-out pronto?</h2>
-          <p>Escríbenos con la dirección y las fechas de tus reservas y te confirmamos la disponibilidad.</p>
-          <div class="contact__actions">
-            <a class="btn btn--white btn--lg" href="https://wa.me/503XXXXXXXX">
-              <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
-              Escribir por WhatsApp
-            </a>
-            <span class="contact__number">[Número de WhatsApp]</span>
           </div>
         </div>
+      </section>
+    </main>
+    <!--termina -->
 
-        <div class="contact__info">
-          <div class="info card reveal">
-            <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
-            <div><p class="info__label">Horario</p><p class="info__value">[Horario de atención]</p></div>
-          </div>
-          <div class="info card reveal">
-            <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
-            <div><p class="info__label">Ubicación</p><p class="info__value">San Miguel, El Salvador · [Zonas que cubren]</p></div>
-          </div>
-          <div class="info card reveal">
-            <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-share"/></svg></span>
-            <div><p class="info__label">Redes</p><p class="info__value">[Instagram / Facebook del negocio]</p></div>
-          </div>
-          <div class="map placeholder placeholder--light reveal">[Mapa de Google Maps]</div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <img src="img/logo.webp" alt="Royal Cleaning Services" width="213" height="164" loading="lazy">
-          <p>Limpieza de propiedades Airbnb en San Miguel, El Salvador.</p>
-        </div>
-        <nav class="footer__nav" aria-label="Pie de página">
-          <a href="#servicios">Servicios</a>
-          <a href="#proceso">Cómo trabajamos</a>
-          <a href="#antes-despues">Antes y después</a>
-          <a href="#preguntas">Preguntas</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-        <a class="footer__top-link" href="#inicio">Volver arriba
-          <svg class="icon" aria-hidden="true"><use href="#i-up"/></svg>
-        </a>
-      </div>
-      <div class="footer__bottom">
-        <p>© 2026 Royal Cleaning Services</p>
-        <p>Sitio creado por estudiantes de Diseño Web Adaptable · Universidad de Oriente</p>
-      </div>
-    </div>
-  </footer>
-
-  <a class="wa-float" href="https://wa.me/503XXXXXXXX" aria-label="Escribir por WhatsApp">
-    <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
-  </a>
-
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <defs>
-      <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.6 7.1L4 20l1.4-4.2A8 8 0 1 1 20 11.5Z"/></symbol>
-      <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
-      <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
-      <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M10 3.5 11.6 8 16 9.5l-4.4 1.6L10 15.5l-1.6-4.4L4 9.5 8.4 8 10 3.5ZM17.5 14l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z"/></symbol>
-      <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V6M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.8"/></symbol>
-      <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8.5A2.5 2.5 0 0 1 6.5 6H8l1.5-2h5L16 6h1.5A2.5 2.5 0 0 1 20 8.5v8a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5v-8Z"/><circle cx="12" cy="12.5" r="3.2"/></symbol>
-      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
-      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
-      <symbol id="i-share" viewBox="0 0 24 24"><circle cx="6" cy="12" r="2.5"/><circle cx="17.5" cy="6" r="2.5"/><circle cx="17.5" cy="18" r="2.5"/><path d="m8.2 10.8 7-3.6M8.2 13.2l7 3.6"/></symbol>
-      <symbol id="i-arrows" viewBox="0 0 24 24"><path d="m9 7-5 5 5 5M15 7l5 5-5 5"/></symbol>
-      <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
-    </defs>
-  </svg>
-
-</body>
+  </body>
 </html>
