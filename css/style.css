@@ -180,9 +180,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .header__logo img { height: 56px; width: auto; transition: height .3s ease; }
 
 .header.is-scrolled {
-  background: rgb(243 246 252 / .85);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: var(--color-fondo);
   box-shadow: 0 8px 24px -16px rgb(15 27 61 / .35);
 }
 .header.is-scrolled .header__inner { height: 64px; }
