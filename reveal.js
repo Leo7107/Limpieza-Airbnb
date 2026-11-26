@@ -24,3 +24,15 @@ const observadorReveal = new IntersectionObserver((entradas, observador) => {
 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
 elementosReveal.forEach(elemento => observadorReveal.observe(elemento));
+
+const comparador = document.getElementById('comparador');
+const controlComparador = document.getElementById('comparadorControl');
+
+if (comparador && controlComparador) {
+  function moverComparador() {
+    comparador.style.setProperty('--pos', controlComparador.value + '%');
+  }
+
+  controlComparador.addEventListener('input', moverComparador);
+  moverComparador();
+}
